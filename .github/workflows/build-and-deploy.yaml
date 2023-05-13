@@ -32,4 +32,4 @@ jobs:
           platforms: linux/arm64
           push: true
           file: .docker/Dockerfile
-          tags: ${{ env.REPO }}/app:${{ github.ref_name }}
+          tags: ${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }}
