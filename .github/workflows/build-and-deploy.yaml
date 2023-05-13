@@ -35,6 +35,7 @@ jobs:
           tags: ${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }}
   deploy:
     runs-on: ubuntu-22.04
+    needs: [build]
     steps:
       - uses: azure/setup-helm@v3
         with:
@@ -53,6 +54,7 @@ jobs:
           fi
       - name: Upgrade Release (Helm)
         run: |
+          echo "${{ vars.HELM_VALUES }}" > helm-values.yaml
           helm upgrade ${{ github.ref_name }} .helm \
             --install \
             --namespace ${{ env.KUBE_NAMESPACE }} \
@@ -61,6 +63,6 @@ jobs:
             --set-string imageCredentials.password="${{ secrets.MAVEN_PASSWORD }}" \
             --set-string imageCredentials.username="${{ secrets.MAVEN_USERNAME }}" \
             --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}" \
-            -f ${{ vars.HELM_VALUES }}
+            -f helm-values.yaml
         env:
           KUBECONFIG: "${{ secrets.KUBECONFIG }}"
