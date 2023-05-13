@@ -58,14 +58,14 @@ jobs:
           fi
       - name: Upgrade Release (Helm)
         run: |
+          echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
           helm upgrade ${{ github.ref_name }} .helm \
             --install \
             --namespace ${{ env.KUBE_NAMESPACE }} \
+            --kubeconfig kubeconfig.yaml \
             --create-namespace \
             --set-string ingress.host="${{ env.INGRESS_HOST }}" \
             --set-string image.url="${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }}" \
             --set-string imageCredentials.password="${{ secrets.MAVEN_PASSWORD }}" \
             --set-string imageCredentials.username="${{ secrets.MAVEN_USERNAME }}" \
             --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}" \
-        env:
-          KUBECONFIG: "${{ secrets.KUBECONFIG }}"
