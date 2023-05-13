@@ -68,4 +68,4 @@ jobs:
             --set-string image.url="${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }}" \
             --set-string imageCredentials.password="${{ secrets.MAVEN_PASSWORD }}" \
             --set-string imageCredentials.username="${{ secrets.MAVEN_USERNAME }}" \
-            --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}" \
+            --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}"
