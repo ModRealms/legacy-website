@@ -37,6 +37,10 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - uses: azure/setup-helm@v3
         with:
           version: '3.10.3'
@@ -54,15 +58,14 @@ jobs:
           fi
       - name: Upgrade Release (Helm)
         run: |
-          echo "${{ vars.HELM_VALUES }}" > helm-values.yaml
           helm upgrade ${{ github.ref_name }} .helm \
             --install \
             --namespace ${{ env.KUBE_NAMESPACE }} \
             --create-namespace \
+            --set-string ingress.host="${{ env.INGRESS_HOST }}" \
             --set-string image.url="${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }} \
             --set-string imageCredentials.password="${{ secrets.MAVEN_PASSWORD }}" \
             --set-string imageCredentials.username="${{ secrets.MAVEN_USERNAME }}" \
             --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}" \
-            -f helm-values.yaml
         env:
           KUBECONFIG: "${{ secrets.KUBECONFIG }}"
