@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.MAVEN_PASSWORD }}
       - name: Create registry path
         run: |
-          echo "REPOSITORY=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+          echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
       - name: Build and Push
         uses: docker/build-push-action@v4
         with:
@@ -32,4 +32,4 @@ jobs:
           platforms: linux/arm64
           push: true
           file: .docker/Dockerfile
-          tags: ${REPOSITORY}/app:${{ github.ref_name }}
+          tags: ${{ env.REPO }}/app:${{ github.ref_name }}
