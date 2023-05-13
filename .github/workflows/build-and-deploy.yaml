@@ -55,7 +55,6 @@ jobs:
         run: |
           helm upgrade ${{ github.ref_name }} .helm \
             --install \
-            --kubeconfig ${{ secrets.KUBECONFIG }} \
             --namespace ${{ env.KUBE_NAMESPACE }} \
             --create-namespace \
             --set-string image.url="${{ vars.DOCKER_PRIVATE_REGISTRY }}/${{ env.REPO }}/app:${{ github.ref_name }} \
@@ -63,3 +62,5 @@ jobs:
             --set-string imageCredentials.username="${{ secrets.MAVEN_USERNAME }}" \
             --set-string imageCredentials.registry="${{ vars.DOCKER_PRIVATE_REGISTRY }}" \
             -f ${{ vars.HELM_VALUES }}
+        env:
+          KUBECONFIG: "${{ secrets.KUBECONFIG }}"
