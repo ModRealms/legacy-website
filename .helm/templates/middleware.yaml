@@ -1,0 +1,10 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-www-middleware
+  namespace: {{ .Release.namespace }}
+spec:
+  redirectRegex:
+    regex: ^https?://www.{{ .Values.ingress.host }}/?(.*)
+    replacement: https://{{ .Values.ingress.host }}/${1}
+    permanent: true

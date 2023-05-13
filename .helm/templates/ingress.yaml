@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-ingress
+  namespace: {{ .Release.namespace }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.ingress.host }}`) || Host(`www.{{ .Values.ingress.host }}`)
+      kind: Rule
+      services:
+        - name:  {{ .Chart.Name }}-{{ .Release.Name }}-service
+          port: 80
+      middlewares:
+        - name: {{ .Chart.Name }}-{{ .Release.Name }}-www-middleware
+  tls: {}

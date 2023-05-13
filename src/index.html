@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--
+AUTHOR   : SimplePixel
+URL      : http://themeforest.net/user/SimplePixel
+TEMPLATE : Monsy - Responsive Coming Soon Template
+VERSION  : 1.0
+
+TABLE OF CONTENTS
+1.0 meta
+2.0 title
+3.0 style import
+4.0 preloader
+5.0 background container
+6.0 menu & logo
+7.0 coming soon container
+8.0 close main content button
+9.0 countdown
+10.0 about container
+    10.1 service
+11.0 subscribe container
+12.0 works container
+13.0 contact container
+14.0 main content controls
+15.0 footer
+16.0 javascript import
+-->
+<html lang="en">
+<head>
+
+    <!-- 1.0 meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+    <meta content="SimplePixel" name="author">
+    <meta content="responsive, monsy, countdown, mailchimp, clean, simple" name="keywords">
+    <meta content="article" property="og:type"/>
+    <meta content="https://modrealms.net" property="og:url"/>
+    <meta content="ModRealms - Premium Modded Network" property="og:title"/>
+    <meta content="Your Only Premium Modded Network." property="og:description"/>
+    <meta content="Your Only Premium Modded Network." property="description"/>
+    <meta content="#ca7ffa" name="theme-color">
+    <link href='static/favicon.ico' rel='shortcut icon' type='image/x-icon'/>
+
+    <!-- 2.0 title -->
+    <title>Home | ModRealms | Premium Modded Network</title>
+    <!-- 3.0 CSS IMPORT -->
+    <!-- CSS IMPORT FOR PLUGIN -->
+    <link href="style/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="style/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="style/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="style/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="style/jquery.wordrotator.min.css" rel="stylesheet" type="text/css">
+    <link href="style/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="style/owl.theme.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS IMPORT FOR FONT -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- CSS IMPORT FOR MAIN STYLE AND COLOR SCHEME -->
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+
+    <!-- snap svg -->
+    <script src="js/snap.svg-min.js" type="text/javascript"></script>
+
+    <!-- support HTML5 elements and media queries for IE9 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208076133-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-208076133-1');
+    </script>
+</head>
+<body>
+<!-- 4.0 preloader -->
+<span aria-hidden="true" class="icon-screen-desktop"></span>
+<div class="preloader">
+    <img alt="preloader" class="centering-xy" src="static/img/grid.svg"/>
+</div>
+<!-- end preloader -->
+
+<!-- 5.0 background container -->
+<div class="bg-container-slideshow"></div>
+<!-- end background container -->
+
+<!-- content container -->
+<div class="content-container">
+    <!-- 6.0 menu & logo -->
+    <nav class="menu animated entrance">
+
+        <ul>
+            <li class="menu-1 menu-out animated">
+                <a data-name="subscribe" data-placement="bottom" data-toggle="tooltip"
+                   href="https://modrealms.net/discord" title="Discord">
+                    <i aria-hidden="true" class="icon material-icons">message</i>
+                </a>
+            </li>
+            <li class="menu-2 menu-out animated">
+                <a data-name="subscribe" data-placement="bottom" data-toggle="tooltip"
+                   href="https://modrealms.net/forum" title="Forum">
+                    <i aria-hidden="true" class="icon material-icons">forum</i>
+                </a>
+            </li>
+            <li class="menu-3 menu-out animated">
+                <a data-placement="bottom" data-toggle="tooltip" href="https://modrealms.net/vote" title="Vote">
+                    <i aria-hidden="true" class="icon material-icons">thumb_up</i>
+                </a>
+            </li>
+            <li class="menu-4 menu-out animated">
+                <a data-placement="bottom" data-toggle="tooltip" href="https://store.modrealms.net/"
+                   title="Store">
+                    <i aria-hidden="true" class="icon material-icons">shopping_cart</i>
+                </a>
+            </li>
+            <li class="menu-5 menu-out animated">
+                <a href="https://modrealms.net/launcher" title="Our Launcher" data-toggle="tooltip" data-name="subscribe" data-placement="bottom">
+                    <i aria-hidden="true" class="icon material-icons">cloud_download</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- end menu -->
+
+    <!-- 7.0 coming soon container -->
+    <div class="container">
+        <!-- container -->
+        <div class="coming-soon-container col-lg-12 col-md-12 col-sm-12 col-xs-12 centering-y">
+            <!-- left side -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top-side animated entrance">
+                <img src="static/img/logo.png" width="90%"/>
+            </div>
+            <!-- end left side -->
+
+            <!-- right side -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottom-side animated entrance">
+                <h1 id="word-rotator" style="width:100%;">ultimate reloaded</h1>
+            </div>
+            <!-- end right side -->
+
+            <div class="animated entrance"></div>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- end coming soon container -->
+
+    <!-- main content -->
+    <div class="main-content" id="main-content">
+        <svg height="100%" preserveAspectRatio="none" viewBox="0 0 80 60" width="100%"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M80,58 80,58 80,60 80,60 Z" fill="white" fill-opacity="0.85"/>
+        </svg>
+
+        <!-- 8.0 close main content button -->
+        <div class="close-content-container animated entrance">
+            <a class="close-content" href="#">X</a>
+        </div>
+        <!-- end close main content button -->
+
+        <!-- 11.0 subscribe container -->
+        <div class="subscribe-container col-lg-6 col-md-6 col-sm-12 centering-y">
+            <h2 class="animated entrance">subscribe</h2>
+            <p class="subscribe-desc col-lg-9 col-lg-offset-3 col-md-10 col-md-offset-2 col-sm-12 col-sm-offset-0 animated entrance">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+            </p>
+
+            <!-- subscribe form -->
+            <div class="subscribe-form-container col-lg-9 col-lg-offset-3 col-md-10 col-md-offset-2 col-sm-12 col-sm-offset-0 animated entrance">
+                <form action="http://facebook.us3.list-manage.com/subscribe/post-json?u=3dbee991d579ab45fd913a688&amp;id=6b6542f366&amp;c=?"
+                      class="subscribe-form"
+                      enctype="multipart/form-data" method="get">
+
+                    <input class="subscribe-email" id="email" name="EMAIL" placeholder="your email address"
+                           type="text"/>
+                    <span class="email-icon"></span>
+
+                    <button class="button-regular" type="submit">submit</button>
+                </form>
+
+                <!-- notif container -->
+                <div class="subscribe-notif">
+
+                </div>
+                <!-- end notif container -->
+            </div>
+            <!-- end subscribe form -->
+        </div>
+        <!-- end subscribe container -->
+
+
+        <!-- 14.0 main content controls -->
+        <nav class="main-content-controls col-lg-6 col-md-6 animated entrance">
+            <a class="next-content button-square" href="#">&rarr;</a>
+            <a class="prev-content button-square" href="#">&larr;</a>
+        </nav>
+        <!-- end main content controls -->
+    </div>
+    <!-- end main content -->
+
+    <!-- 15.0 footer -->
+    <footer class="animated entrance">
+        <p>Copyright © 2021 ModRealms</p>
+        <p></p>
+        <!-- social media link -->
+        <div class="social-media-link">
+            <a href="https://facebook.com/modrealms"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/modrealms"><i class="fa fa-twitter"></i></a>
+        </div>
+        <!-- end social media link -->
+    </footer>
+    <!-- end footer -->
+</div>
+<!-- end content container -->
+
+<!-- 16.0 javascript import -->
+<!-- jquery -->
+<script src="js/jquery.js" type="text/javascript"></script>
+<!-- bootstrap -->
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<!-- countdown -->
+<script src="js/jquery.lwtCountdown-1.0.js" type="text/javascript"></script>
+<!-- backstretch -->
+<script src="js/jquery.backstretch.min.js" type="text/javascript"></script>
+<!-- jquery validate -->
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<!-- magnific popup -->
+<script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<!-- word rotator -->
+<script src="js/jquery.wordrotator.min.js" type="text/javascript"></script>
+<!-- classie -->
+<script src="js/classie.js" type="text/javascript"></script>
+<!-- svg loader -->
+<script src="js/svgLoader.js" type="text/javascript"></script>
+<!-- owl carousel -->
+<script src="js/owl.carousel.js" type="text/javascript"></script>
+<!-- main js -->
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}
+  namespace: {{ .Release.namespace }}
+  labels:
+    app: {{ .Chart.Name }}-{{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-{{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-{{ .Release.Name }}
+        app/release: {{ .Release.Name }}
+      annotations:
+        app/ingress: {{ .Values.ingress.host }}
+    spec:
+      imagePullSecrets:
+        - name: space-docker-registry
+      containers:
+        - name: {{ .Chart.Name }}-{{ .Release.Name }}
+          image: {{ .Values.image.url }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
